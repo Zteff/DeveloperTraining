@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lifetime demo:</h1>
+    <dl>
+        <dt>Transient operation id:</dt>
+        <dd>@ViewBag.TransientGuid</dd>
+        <dt>Other Transient operation id:</dt>
+        <dd>@ViewBag.TransientGuid2</dd>
+        <dt>Scoped operation id:</dt>
+        <dd>@ViewBag.ScopedGuid</dd>
+        <dt>Other Scoped operation id:</dt>
+        <dd>@ViewBag.ScopedGuid2</dd>
+        <dt>Singleton operation id:</dt>
+        <dd>@ViewBag.SingletonGuid</dd>
+        <dt>Other Singleton operation id:</dt>
+        <dd>@ViewBag.SingletonGuid2</dd>
+    </dl>
+</div>
