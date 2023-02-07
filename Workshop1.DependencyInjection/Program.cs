@@ -1,5 +1,5 @@
+using Workshop1.DependencyInjection.Features;
 using Workshop1.DependencyInjection.Interfaces;
-using Workshop1.DependencyInjection.Operations;
 
 var builder = WebApplication.CreateBuilder(args);
 

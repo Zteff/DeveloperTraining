@@ -1,5 +1,5 @@
-﻿using Workshop1.DependencyInjection.Interfaces;
-using Workshop1.DependencyInjection.Operations;
+﻿using Workshop1.DependencyInjection.Features;
+using Workshop1.DependencyInjection.Interfaces;
 
 namespace Workshop1.DependencyInjection.ExtensionMethods;
 

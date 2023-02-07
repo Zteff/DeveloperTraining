@@ -1,6 +1,6 @@
 using Workshop1.DependencyInjection.Interfaces;
 
-namespace Workshop1.DependencyInjection.Operations;
+namespace Workshop1.DependencyInjection.Features;
 
 public class Operation : ITransientOperation, IScopedOperation, ISingletonOperation
 {
