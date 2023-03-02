@@ -1,14 +1,13 @@
+using Workshop1.DependencyInjection.ExtensionMethods;
 using Workshop1.DependencyInjection.Features;
 using Workshop1.DependencyInjection.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+// builder.Services.AddControllersWithViews();
 
-builder.Services.AddTransient<ITransientOperation, Operation>();
-builder.Services.AddScoped<IScopedOperation, Operation>();
-builder.Services.AddSingleton<ISingletonOperation, Operation>();
+builder.Services.AddBusinessLogic().AddControllersWithViews();
 
 var app = builder.Build();
 
