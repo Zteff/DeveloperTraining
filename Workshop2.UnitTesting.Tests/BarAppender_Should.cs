@@ -9,8 +9,8 @@ public class BarAppender_Should
     public void AppendFoo_When_AppendBarIsCalled()
     {
         // Arrange
-        var loggerMock = new Mock<ILogger>();
-        var sut = new BarAppender(loggerMock.Object);
+        var someDependencyMock = new Mock<ISomeDependency>();
+        var sut = new BarAppender(someDependencyMock.Object);
         var myString = "Some string";
 
         // Act
@@ -21,17 +21,32 @@ public class BarAppender_Should
     }
     
     [Fact]
-    public void CallLoggerOnce_When_AppendBarIsCalled()
+    public void CallLoggerWithCorrectInput_When_AppendBarIsCalled()
     {
         // Arrange
-        var loggerMock = new Mock<ILogger>();
-        var sut = new BarAppender(loggerMock.Object);
+        var someDependencyMock = new Mock<ISomeDependency>();
+        var sut = new BarAppender(someDependencyMock.Object);
         var myString = "Some string";
 
         // Act
         var result = sut.AppendBar(myString);
 
         // Assert
-        loggerMock.Verify(x => x.Log(LogLevel.Information, $"Appending Bar to {myString}"));
+        someDependencyMock.Verify(x => x.DoStuff($"Appending Bar to {myString}"));
+    }
+    
+    [Fact]
+    public void CallLoggerOnce_When_AppendBarIsCalled()
+    {
+        // Arrange
+        var someDependencyMock = new Mock<ISomeDependency>();
+        var sut = new BarAppender(someDependencyMock.Object);
+        var myString = "Some string";
+
+        // Act
+        var result = sut.AppendBar(myString);
+
+        // Assert
+        someDependencyMock.Verify(x => x.DoStuff($"Appending Bar to {myString}"), Times.Once);
     }
 }

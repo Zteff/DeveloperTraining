@@ -4,16 +4,16 @@ namespace Workshop2.UnitTesting;
 
 public class BarAppender
 {
-    private readonly ILogger _logger;
+    private readonly ISomeDependency _someDependency;
 
-    public BarAppender(ILogger logger)
+    public BarAppender(ISomeDependency someDependency)
     {
-        _logger = logger;
+        _someDependency = someDependency;
     }
 
     public string AppendBar(string stringToAppendTo)
     {
-        _logger.Log(LogLevel.Information, $"Appending Bar to {stringToAppendTo}");
+        _someDependency.DoStuff($"Appending Bar to {stringToAppendTo}");
         return $"{stringToAppendTo}Bar";
     }
 }
