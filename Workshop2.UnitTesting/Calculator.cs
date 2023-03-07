@@ -6,6 +6,6 @@ public class Calculator
     {
         if (!numbersToAdd.Any())
             return 0;
-        return numbersToAdd[0];
+        return numbersToAdd.Where(x => x > 0).Sum();
     }
 }

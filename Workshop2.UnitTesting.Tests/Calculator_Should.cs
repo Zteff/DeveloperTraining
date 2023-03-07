@@ -30,4 +30,33 @@ public class Calculator_Should
         //Assert
         Assert.Equal(number, result);
     }
+    
+    [Theory]
+    [InlineData(new int[]{1,1}, 2)]
+    [InlineData(new int[]{1,1,1}, 3)]
+    public void ReturnsCorrectResults_When_ArrayOnlyContainsMoreThanOneNumber(int[] numbersToAdd, int expectedResult)
+    {
+        //Arrange
+        var sut = new Calculator();
+
+        //Act
+        var result = sut.Add(numbersToAdd);
+
+        //Assert
+        Assert.Equal(expectedResult, result);
+    }
+    
+    [Theory]
+    [InlineData(new int[]{-1,1}, 1)]
+    public void ReturnsCorrectResults_When_ArrayContainsNegativeNumber(int[] numbersToAdd, int expectedResult)
+    {
+        //Arrange
+        var sut = new Calculator();
+
+        //Act
+        var result = sut.Add(numbersToAdd);
+
+        //Assert
+        Assert.Equal(expectedResult, result);
+    }
 }
