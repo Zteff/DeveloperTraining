@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workshop2.UnitTesting", "Wo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workshop2.UnitTesting.Tests", "Workshop2.UnitTesting.Tests\Workshop2.UnitTesting.Tests.csproj", "{D748C0E3-0B71-424E-9DE9-321B1DA2FF38}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workshop 1 - Dependency Injection", "Workshop 1 - Dependency Injection", "{0878D748-71C8-41CB-B442-91B2040CC2FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workshop 2 - Unit testing", "Workshop 2 - Unit testing", "{8E1924D6-9A3C-43D5-8ECB-B32218E4828E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,10 @@ Global
 		{D748C0E3-0B71-424E-9DE9-321B1DA2FF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D748C0E3-0B71-424E-9DE9-321B1DA2FF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D748C0E3-0B71-424E-9DE9-321B1DA2FF38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B460220-209F-4C80-9AD5-2247CB34D1D1} = {0878D748-71C8-41CB-B442-91B2040CC2FB}
+		{678C9B57-F36B-4FA1-A2B9-9F2E033E1C26} = {8E1924D6-9A3C-43D5-8ECB-B32218E4828E}
+		{D748C0E3-0B71-424E-9DE9-321B1DA2FF38} = {8E1924D6-9A3C-43D5-8ECB-B32218E4828E}
 	EndGlobalSection
 EndGlobal
