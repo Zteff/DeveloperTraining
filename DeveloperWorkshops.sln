@@ -10,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workshop 1 - Dependency Inj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workshop 2 - Unit testing", "Workshop 2 - Unit testing", "{8E1924D6-9A3C-43D5-8ECB-B32218E4828E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workshop2.StringCalculator", "Workshop2.StringCalculator\Workshop2.StringCalculator.csproj", "{14C8632C-DEB4-4132-BB8F-16D5E1AAA194}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workshop2.StringCalculator.Tests", "Workshop2.StringCalculator.Tests\Workshop2.StringCalculator.Tests.csproj", "{D9E6BE4C-1A5F-45DC-BEB1-AFB6FEF216CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,10 +32,20 @@ Global
 		{D748C0E3-0B71-424E-9DE9-321B1DA2FF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D748C0E3-0B71-424E-9DE9-321B1DA2FF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D748C0E3-0B71-424E-9DE9-321B1DA2FF38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C8632C-DEB4-4132-BB8F-16D5E1AAA194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C8632C-DEB4-4132-BB8F-16D5E1AAA194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C8632C-DEB4-4132-BB8F-16D5E1AAA194}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C8632C-DEB4-4132-BB8F-16D5E1AAA194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9E6BE4C-1A5F-45DC-BEB1-AFB6FEF216CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9E6BE4C-1A5F-45DC-BEB1-AFB6FEF216CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9E6BE4C-1A5F-45DC-BEB1-AFB6FEF216CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9E6BE4C-1A5F-45DC-BEB1-AFB6FEF216CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2B460220-209F-4C80-9AD5-2247CB34D1D1} = {0878D748-71C8-41CB-B442-91B2040CC2FB}
 		{678C9B57-F36B-4FA1-A2B9-9F2E033E1C26} = {8E1924D6-9A3C-43D5-8ECB-B32218E4828E}
 		{D748C0E3-0B71-424E-9DE9-321B1DA2FF38} = {8E1924D6-9A3C-43D5-8ECB-B32218E4828E}
+		{14C8632C-DEB4-4132-BB8F-16D5E1AAA194} = {8E1924D6-9A3C-43D5-8ECB-B32218E4828E}
+		{D9E6BE4C-1A5F-45DC-BEB1-AFB6FEF216CC} = {8E1924D6-9A3C-43D5-8ECB-B32218E4828E}
 	EndGlobalSection
 EndGlobal
