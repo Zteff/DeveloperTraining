@@ -6,7 +6,7 @@ namespace Workshop2.UnitTesting.Tests;
 public class BarAppender_Should
 {
     [Fact]
-    public void AppendFoo_When_AppendBarIsCalled()
+    public void AppendBar_When_AppendBarIsCalled()
     {
         // Arrange
         var someDependencyMock = new Mock<ISomeDependency>();
@@ -21,7 +21,7 @@ public class BarAppender_Should
     }
     
     [Fact]
-    public void CallLoggerWithCorrectInput_When_AppendBarIsCalled()
+    public void CallDependencyWithCorrectInput_When_AppendBarIsCalled()
     {
         // Arrange
         var someDependencyMock = new Mock<ISomeDependency>();
@@ -32,7 +32,8 @@ public class BarAppender_Should
         var result = sut.AppendBar(myString);
 
         // Assert
-        someDependencyMock.Verify(x => x.DoStuff($"Appending Bar to {myString}"));
+        someDependencyMock.Verify(x => 
+            x.DoStuff($"Appending Bar to {myString}"));
     }
     
     [Fact]
@@ -47,6 +48,7 @@ public class BarAppender_Should
         var result = sut.AppendBar(myString);
 
         // Assert
-        someDependencyMock.Verify(x => x.DoStuff($"Appending Bar to {myString}"), Times.Once);
+        someDependencyMock.Verify(x => 
+            x.DoStuff($"Appending Bar to {myString}"), Times.Once);
     }
 }
