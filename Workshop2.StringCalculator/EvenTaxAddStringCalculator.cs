@@ -1,7 +1,14 @@
 ﻿namespace Workshop2.StringCalculator;
 
-public class StringCalculator
+public class EvenTaxAddStringCalculator
 {
+    private readonly ITaxable _taxable;
+
+    public EvenTaxAddStringCalculator(ITaxable taxable)
+    {
+        _taxable = taxable;
+    }
+    
     public int Add(string numbersAsString)
     {
         if (string.IsNullOrEmpty(numbersAsString))
@@ -23,6 +30,11 @@ public class StringCalculator
             finalNumberInts.Add(number);
         }
 
-        return finalNumberInts.Sum();
+        var sum = finalNumberInts.Sum();
+
+        if (_taxable.IsTaxable(sum))
+            sum += (sum / 2);
+
+        return sum;
     }
 }
