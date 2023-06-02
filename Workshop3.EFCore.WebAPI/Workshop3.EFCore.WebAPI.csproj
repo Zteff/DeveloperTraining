@@ -18,4 +18,8 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Workshop3.EFCore.Data.EFCore\Workshop3.EFCore.Data.EFCore.csproj" />
+    </ItemGroup>
+
 </Project>
