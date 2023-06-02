@@ -6,11 +6,11 @@ namespace Workshop3.EFCore.WebAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PopulateController : ControllerBase
+public class ResetDataController : ControllerBase
 {
     private readonly MusicWikiContext _context;
 
-    public PopulateController(MusicWikiContext context)
+    public ResetDataController(MusicWikiContext context)
     {
         _context = context;
         _context.Database.EnsureDeleted();
