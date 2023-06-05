@@ -45,19 +45,19 @@ public class ResetDataController : ControllerBase
             {
                 Title = "Master of Puppets",
                 ReleaseDate = new DateTime(1986, 3, 3),
-                ArtistId = artist.Id
+                Artist = artist
             },
             new Album()
             {
                 Title = "Ride the Lightning",
                 ReleaseDate = new DateTime(1984, 7, 27),
-                ArtistId = artist.Id
+                Artist = artist
             },
             new Album()
             {
                 Title = "Kill 'Em All",
                 ReleaseDate = new DateTime(1983, 7, 25),
-                ArtistId = artist.Id
+                Artist = artist
             }
         };
     }

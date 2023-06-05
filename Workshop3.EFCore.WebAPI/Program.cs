@@ -12,10 +12,12 @@ builder.Services.AddSwaggerGen();
 var connStr = builder.Configuration.GetConnectionString("MusicWikiConnection")!;
 builder.Services.AddTransient<MusicWikiContext>(x => new MusicWikiContext(connStr));
 
-builder.Services.AddDbContext<MusicWikiContext>(options =>
-{
-    options.UseSqlServer(connStr);
-});
+builder.Services.AddDbContext<MusicWikiContext>(options => { options.UseSqlServer(connStr); });
+
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+    );
 
 var app = builder.Build();
 
