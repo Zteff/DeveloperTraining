@@ -20,4 +20,16 @@ public class MusicWikiContext : DbContext
     {
         optionsBuilder.UseSqlServer(_connectionString);
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Artist>().HasData(new[]
+        {
+            new Artist() { Id=1,Name = "Metallica" },
+            new Artist() { Id=2,Name = "Megadeth" },
+            new Artist() { Id=3,Name = "Slayer" },
+            new Artist() { Id=4,Name = "Anthrax" }
+        });
+    }
 }
