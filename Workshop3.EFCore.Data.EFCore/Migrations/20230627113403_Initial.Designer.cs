@@ -12,8 +12,8 @@ using Workshop3.EFCore.Data.EFCore;
 namespace Workshop3.EFCore.Data.EFCore.Migrations
 {
     [DbContext(typeof(MusicWikiContext))]
-    [Migration("20230626111203_AddGenre")]
-    partial class AddGenre
+    [Migration("20230627113403_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,6 +48,29 @@ namespace Workshop3.EFCore.Data.EFCore.Migrations
                     b.HasIndex("ArtistId");
 
                     b.ToTable("Albums");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 3,
+                            ArtistId = 1,
+                            ReleaseDate = new DateTime(1986, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Master of Puppets"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ArtistId = 1,
+                            ReleaseDate = new DateTime(1984, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Ride the Lightning"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            ArtistId = 1,
+                            ReleaseDate = new DateTime(1983, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Kill 'Em All"
+                        });
                 });
 
             modelBuilder.Entity("Workshop3.EFCore.Domain.Artist", b =>
@@ -58,35 +81,35 @@ namespace Workshop3.EFCore.Data.EFCore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("GenreId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("GenreId");
 
                     b.ToTable("Artists");
-                });
 
-            modelBuilder.Entity("Workshop3.EFCore.Domain.Genre", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Genres");
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Metallica"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Megadeth"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Slayer"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Anthrax"
+                        });
                 });
 
             modelBuilder.Entity("Workshop3.EFCore.Domain.Album", b =>
@@ -102,21 +125,7 @@ namespace Workshop3.EFCore.Data.EFCore.Migrations
 
             modelBuilder.Entity("Workshop3.EFCore.Domain.Artist", b =>
                 {
-                    b.HasOne("Workshop3.EFCore.Domain.Genre", "Genre")
-                        .WithMany("Bands")
-                        .HasForeignKey("GenreId");
-
-                    b.Navigation("Genre");
-                });
-
-            modelBuilder.Entity("Workshop3.EFCore.Domain.Artist", b =>
-                {
                     b.Navigation("Albums");
-                });
-
-            modelBuilder.Entity("Workshop3.EFCore.Domain.Genre", b =>
-                {
-                    b.Navigation("Bands");
                 });
 #pragma warning restore 612, 618
         }

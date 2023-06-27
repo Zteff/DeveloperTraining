@@ -19,15 +19,18 @@ public class ArtistController : ControllerBase
     [HttpGet]
     public IActionResult Get()
     {
-        //UpdateDemo();
+        // UpdateDemo();
 
         return Ok(_context.Artists.ToList());
     }
 
     private void UpdateDemo()
     {
-        var album = new Album() { Id = 1, Title = "Master of puppets", ReleaseDate = new DateTime(1986, 3, 3) };
-        _context.Albums.Update(album);
+        var master = _context.Albums.Single(x => x.Id == 3);
+        master.Title = "Master of Puppies";
+        // master.ReleaseDate = new DateTime(1986, 3, 3);
+        // var album = new Album() { Id = 3, Title = "Master!", ArtistId = 1};
+        // _context.Albums.Update(album);
         _context.SaveChanges();
     }
 }

@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Workshop3.EFCore.Data.EFCore.Migrations
 {
     /// <inheritdoc />
@@ -43,6 +45,27 @@ namespace Workshop3.EFCore.Data.EFCore.Migrations
                         principalTable: "Artists",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Artists",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Metallica" },
+                    { 2, "Megadeth" },
+                    { 3, "Slayer" },
+                    { 4, "Anthrax" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Albums",
+                columns: new[] { "Id", "ArtistId", "ReleaseDate", "Title" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(1983, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kill 'Em All" },
+                    { 2, 1, new DateTime(1984, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ride the Lightning" },
+                    { 3, 1, new DateTime(1986, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "Master of Puppets" }
                 });
 
             migrationBuilder.CreateIndex(
